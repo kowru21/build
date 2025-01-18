@@ -1,0 +1,153 @@
+.hero-section {
+  background-color: white;
+  padding: 50px 20px;
+  border-bottom:  1px solid #dcdcdc;
+  padding-bottom: 110px; 
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 55px; /* Измененный размер текста */
+  font-weight: normal; /* Убрана жирность */
+  margin-bottom: 20px;
+}
+
+.hero-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Два столбца с равной шириной */
+  gap: 10px 40px; /* 10px между строками, 40px между столбцами */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 33px;
+}
+
+.hero-list li {
+  font-family: 'Manrope', sans-serif;
+  display: flex;
+  align-items: center;
+  color: #007bff;
+  font-size: 35px;
+  font-weight: 500;
+  gap: 10px; /* Расстояние между галочкой и текстом */
+}
+
+
+.hero-note {
+  display: flex;
+  align-items: center;
+  font-size: 18px; /* Размер шрифта */
+  font-weight: 600; /* Жирность шрифта */
+  margin-bottom: 20px;
+  gap: 10px; /* Расстояние между иконкой и текстом */
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Размер контейнера с иконкой */
+  height: 60px;
+}
+
+
+
+.hero-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-item {
+  text-align: left;
+  border-bottom: 1px solid #d3d3d3; /* Нижняя линия */
+  padding-bottom: 10px; /* Отступ перед линией */
+  flex: 1; /* Равная ширина для всех блоков */
+}
+
+.stat-item strong {
+  display: block;
+  font-size: 64px; /* Размер для 45, 12, 100% */
+  font-weight: 600; /* Дополнительная жирность */
+  color: #007bff;
+}
+
+.stat-item span {
+   font-size: 18px; /* Размер для поясняющего текста */
+  font-weight: bold; /* Жирность для поясняющего текста */
+  color: #333;
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: #007bff; /* Синий цвет */
+  color: white; /* Белый цвет текста */
+  font-size: 16px; /* Размер текста */
+  font-weight: 500; /* Жирность текста */
+  padding: 16px 24px; /* Увеличенные отступы внутри кнопки */
+  border: none; /* Убираем границы */
+  border-radius: 8px; /* Скругленные углы */
+  cursor: pointer; /* Указываем, что кнопка кликабельна */
+  text-align: center; /* Центрируем текст */
+  max-width: 425px; /* Максимальная ширина кнопки */
+  width: 100%; /* Кнопка растягивается на всю доступную ширину, если контейнер меньше */
+  transition: background-color 0.3s, transform 0.2s; /* Плавные эффекты при наведении */
+}
+
+.hero-button:hover {
+  background-color: #0056b3; /* Более темный синий при наведении */
+  transform: scale(1.02); /* Легкое увеличение кнопки */
+}
+
+.hero-button:active {
+  transform: scale(0.98); /* Легкое уменьшение при нажатии */
+}
+
+
+
+.hero-image {
+  flex: 1;
+  max-width: 50%;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.hero-image-caption {
+  margin-top: 10px;
+}
+
+.hero-image-caption h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hero-image-caption p {
+  font-size: 16px;
+  color: #666;
+}
+
+
+
+
+.checkmark {
+  width: 25px; /* Размер галочки */
+  height: 25px;
+  stroke: #007bff; /* Цвет галочки */
+}

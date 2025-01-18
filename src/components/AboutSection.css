@@ -1,0 +1,173 @@
+.about-section {
+  background-image: url('https://karataevarb.ru/img/about/bg.png');
+  background-size: contain; /* Сохраняем пропорции изображения */
+  background-repeat: no-repeat; /* Отключаем повтор изображения */
+  background-position: left top; /* Расположение изображения слева сверху */
+  padding: 50px 0; /* Вертикальные отступы */
+  margin-top: 110px;
+  width: 100%; /* Фон на всю ширину экрана */
+}
+.about-section {
+  display: flex;
+  width: 100%;
+}
+
+.about-container {
+  display: flex;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.about-left-block {
+  width: 16%; /* Ширина левого блока */
+  height: auto; /* Высота подстраивается под контент */
+}
+
+.about-right-block {
+  width: 84%; /* Оставшаяся ширина для правого блока */
+}
+
+.about-title {
+  font-size: 85px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -2.55px;
+  color: #454545;
+  margin-bottom: 30px;
+}
+
+.about-horizontal-blocks {
+  display: flex;
+}
+
+.about-description-block {
+  width: 50%; /* Левая часть горизонтального блока */
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 140%;
+  color: #333;
+  flex: 1; /* Занимает всё оставшееся пространство */
+}
+
+.about-description-block p:first-child {
+  margin-bottom: 30px; /* Отступ снизу */
+  font-size: 30px; /* Размер шрифта */
+  font-style: normal; /* Стиль текста */
+  font-weight: 500; /* Средняя жирность */
+  line-height: 140%; /* Межстрочный интервал */
+  color: #333; /* Цвет текста */
+}
+
+
+.about-description-block p:not(:first-child) {
+  margin-bottom: 10px; /* Отступ снизу */
+  font-size: 18px; /* Размер шрифта */
+  font-style: normal; /* Стиль текста */
+  font-weight: 400; /* Обычная жирность */
+  line-height: 145%; /* Межстрочный интервал */
+  color: #333; /* Цвет текста */
+}
+
+
+
+.about-stats-block {
+  width: 38%; /* Правая часть горизонтального блока */
+  padding: 0px 15px;
+  display: flex;
+  flex-direction: column; /* Список идет вертикально */
+  align-items: flex-start; /* Выравнивание текста по левому краю */
+  gap: 10px; /* Расстояние между элементами */
+}
+
+.profile-card {
+  position: relative;
+  background: url("https://karataevarb.ru/img/about/mask.svg") no-repeat;
+  background-size: cover; /* Изменяем на cover для заполнения большего пространства */
+  background-position: left top;
+  border-radius: 10px;
+  padding: 30px; /* Увеличиваем отступы */
+  max-width: 500px; /* Увеличиваем максимальную ширину */
+  min-height: 180px; /* Устанавливаем минимальную высоту */
+  display: flex; /* Используем Flexbox для выравнивания */
+  align-items: center;
+  gap: 20px; /* Расстояние между текстом и логотипом */
+}
+
+.profile-info {
+  margin-top: 50px; 
+  flex: 1;
+}
+
+.profile-logo {
+  width: 80px;
+  height: 80px;
+  margin-top: 50px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+
+.profile-info h3 {
+  font-weight: 600;
+  color: #2E80E1;
+  margin: 0; /* Убираем лишние отступы */
+}
+
+.profile-info p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  color: #454545;
+  margin: 0; /* Убираем лишние отступы */
+}
+
+.profile-stats {
+  margin-top: 30px;
+}
+
+.stats {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.stat span {
+  font-size: 14px;
+  color: #333;
+}
+.stat-item-about {
+  display: flex;
+  align-items: center; /* Выравниваем текст по вертикали */
+  gap: 10px; /* Расстояние между числом и текстом */
+  margin-bottom: 20px; /* Отступ между элементами */
+}
+
+.stat-item-about strong {
+  min-width: 109px; /* Минимальная ширина */
+  font-size: 45px; /* Размер шрифта */
+  font-style: normal; /* Стиль шрифта */
+  font-weight: 500; /* Жирность */
+  line-height: 130%; /* Межстрочный интервал */
+  letter-spacing: -2.25px; /* Межбуквенный интервал */
+  color: #2e80e1; /* Цвет */
+  text-align: left; /* Выравнивание текста вправо */
+}
+
+.stat-item-about span {
+  font-size: 18px; /* Размер шрифта */
+  font-style: normal; /* Стиль шрифта */
+  font-weight: 600; /* Жирность */
+  line-height: 135%; /* Межстрочный интервал */
+  color: #454545; /* Цвет текста */
+}
+
