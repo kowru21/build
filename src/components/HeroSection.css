@@ -143,11 +143,126 @@
   color: #666;
 }
 
-
-
-
 .checkmark {
   width: 25px; /* Размер галочки */
   height: 25px;
   stroke: #007bff; /* Цвет галочки */
+}
+
+
+@media (max-width: 768px) {
+.hero-note {
+  margin: 20px 0 30px 0px;
+  font-weight: 500;
+}
+
+
+.hero-section {
+  padding: 0px 20px 50px 20px;
+}
+
+
+.hero-list{
+  display: inline;
+}
+
+ .hero-stats {
+    display: block;
+    gap: 20px;
+    min-width: 110px;
+        
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+}
+
+.stat-item strong{
+  font-size: 40px;
+  align-items: center;
+}
+
+.stat-item span{
+  padding-left:  40px;
+}
+
+.stat-item.item1 {
+  padding-left: 20px;
+}
+
+.stat-item.item1 span{
+  padding-left: 75px;
+}
+
+.stat-item.item2 span{
+  padding-left: 80px;
+}
+
+.stat-item.item2 {
+  padding-left: 20px;
+}
+/*
+.stat-item {  
+  margin-top: 10px;
+}
+
+.stat-item:first-child span {
+  padding: 0px 0px 0px 50px ; 
+  font-size: 16px;
+
+}
+.stat-item:nth-child(2n) span {
+  padding: 0px 0px 0px 55px ; 
+  font-size: 16px;
+
+} 
+
+
+
+.stat-item:last-child span {
+  padding: 0px 0px 0px 20px; 
+  font-size: 14px;
+
+}
+.stat-item:last-child strong {
+  padding: 0px 0px; 
+  font-size: 28px;
+}
+
+
+*/
+
+/*
+.stat-item span{
+    display: inline-block;
+    font-size: 16px;
+    padding: 0px 20px
+  }
+
+  .stat-item strong{
+    font-size: 35px;
+    line-height: 32px;
+    display: inline-block;
+  }
+*/
+.hero-image{
+  display: none;
+}
+
+.hero-text {
+        max-width: 100%;
+}
+
+.hero-text h1 {
+        margin-bottom: 20px;
+        margin-top: 30px;
+        font-size: 28px;
+        line-height: 110%;
+        letter-spacing: -0.84px;
+}
+
+
+
+
 }

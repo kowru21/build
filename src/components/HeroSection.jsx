@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./HeroSection.css";
+import Popup from "./Popup"
 
 const HeroSection = () => {
+
+const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleOpenPopup = () => {
+    setIsPopupOpen(true); // Открыть попап
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false); // Закрыть попап
+  };
+
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -76,20 +88,21 @@ const HeroSection = () => {
             несостоятельности (банкротстве)» 
           </p>
           <div className="hero-stats">
-            <div className="stat-item">
+            <div className="stat-item item1">
               <strong>45</strong>
               <span>дней на проведение банкротства</span>
             </div>
-            <div className="stat-item">
+            <div className="stat-item item2">
               <strong>12</strong>
               <span>месяцев рассрочки, первый месяц 0 ₽</span>
             </div>
-            <div className="stat-item">
+            <div className="stat-item item3">
               <strong>100%</strong>
               <span>возврат оплаты, если дело не будет решено</span>
             </div>
           </div>
-          <button className="hero-button">Получить консультацию</button>
+          <button onClick={handleOpenPopup} className="hero-button">Получить консультацию</button>
+          <Popup isOpen={isPopupOpen} onClose={handleClosePopup} />
         </div>
         <div className="hero-image">
           <img src="/path/to/image.jpg" alt="ФОТО" />

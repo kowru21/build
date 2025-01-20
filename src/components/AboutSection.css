@@ -171,3 +171,76 @@
   color: #454545; /* Цвет текста */
 }
 
+@media (max-width: 768px) { 
+
+
+ .profile-stats {
+  min-width: 350px; 
+
+ } 
+
+.profile-card {
+
+  min-width: 300px; 
+  margin-top: 20px;
+}
+
+
+.about-section {
+  margin-top: 0px;
+   background: white;
+}
+
+.about-title {
+  font-size: 55px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -2.55px;
+    color: #454545;
+    margin-bottom: 30px;
+
+}
+
+.about-right-block {
+  width: 100%;
+  padding: 0px;
+}
+
+.about-horizontal-blocks {
+  display: inline-block;
+}
+
+.about-left-block {
+  width: 0;
+}
+
+
+.about-description-block{
+  width: 100%; 
+}
+
+.about-description-block p:first-child {
+   text-align: left ;
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    color: #333;
+}
+
+
+   .about-description-block p:not(:first-child) {
+    text-align: left ;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 145%;
+    color: #333;
+}
+
+
+
+
+}
