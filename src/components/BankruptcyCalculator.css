@@ -9,6 +9,7 @@
   display: flex;
   width: 1400px;
   background-color: #3b82f6;
+  margin: 50px 0px ;
   border-radius: 25px;
   color: white;
 }
@@ -43,8 +44,19 @@
 }
 
 .calculator-main h3 {
-  font-size: 18px;
+  font-size: 25px;
+  font-weight: 400px;
+  color: #2e80e1; 
   margin: 20px 0;
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-count {
+  font-size: 25px;
 }
 
 .checkbox-group {
@@ -55,6 +67,15 @@
 .checkbox-item {
   margin-bottom: 10px;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.checkbox {
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid #d9dfea;
+  background-color: #f3f8fb;
+  border-radius: 5px;
 }
 
 .custom-input {
@@ -67,7 +88,7 @@
 .button-group {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .btn {
@@ -89,5 +110,13 @@
 }
 
 .btn.next:hover {
-  background-color: #326fd1;
+  background-color: #5894f5;
+}
+
+@media (max-width: 1024px) {
+
+.calculator-content{
+  display: block;
+}
+
 }

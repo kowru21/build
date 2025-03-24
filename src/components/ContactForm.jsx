@@ -1,84 +1,111 @@
 import React, { useState } from 'react';
+import "./ContactForm.css"; 
 
-const ContactForm = ({ onSubmit }) => {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [error, setError] = useState('');
+const ContactForm = ({ answers = {}, extradata = [], endpoint = 'http://localhost:8000/send-message/' }) => {
+  const [name, setName] = useState(answers?.name || '');
+  const [phone, setPhone] = useState(answers?.phone || '');
+  const [message, setMessage] = useState('');
 
   const formatPhone = (value) => {
     const cleaned = value.replace(/\D/g, '');
-    let formatted = '+7';
+    let formatted = '+';
 
-    if (cleaned.length > 1) formatted += ' (' + cleaned.slice(1, 4);
-    if (cleaned.length >= 4) formatted += ') ' + cleaned.slice(4, 7);
-    if (cleaned.length >= 7) formatted += '-' + cleaned.slice(7, 9);
-    if (cleaned.length >= 9) formatted += '-' + cleaned.slice(9, 11);
+    if (cleaned.length > 0) formatted += cleaned[0];
+    if (cleaned.length > 1) formatted += ` (${cleaned.slice(1, 4)}`;
+    if (cleaned.length > 4) formatted += `) ${cleaned.slice(4, 7)}`;
+    if (cleaned.length > 7) formatted += `-${cleaned.slice(7, 9)}`;
+    if (cleaned.length > 9) formatted += `-${cleaned.slice(9, 11)}`;
 
     return formatted;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
+  const handlePhoneChange = (e) => {
+    const value = e.target.value;
+    const formatted = formatPhone(value);
 
-    if (name.length < 2) {
-      setError('Имя должно содержать минимум 2 буквы.');
-      return;
-    }
-
-    if (phone.length < 18) {
-      setError('Введите корректный номер телефона.');
-      return;
-    }
-
-    try {
-      const response = await fetch('/ваш-api-адрес', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone }),
-      });
-
-      const result = await response.json();
-      if (result.success) {
-        setError('');
-        setName('');
-        setPhone('');
-        alert('Заявка отправлена успешно!');
-      } else {
-        setError(result.message || 'Ошибка отправки формы.');
-      }
-    } catch (error) {
-      setError('Ошибка сети.');
+    if (formatted.length <= 18) {
+      setPhone(formatted);
     }
   };
 
+  const handleNameChange = (e) => {
+    const value = e.target.value;
+    const cleaned = value.replace(/[^a-zA-Zа-яА-ЯёЁ\s]/g, '');
+
+    if (cleaned.length <= 15) {
+      setName(cleaned);
+    }
+  };
+
+  const handleSubmit = () => {
+    if (!name.trim() || phone.length !== 18) {
+      setMessage('Пожалуйста, введите корректные данные.');
+      return;
+    }
+
+    const payload = {
+      name,
+      phone,
+      extradata,
+    };
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.success) {
+          setMessage('Заявка успешно отправлена!');
+        } else {
+          setMessage(`Ошибка отправки: ${result.message}`);
+        }
+      })
+      .catch((error) => {
+        console.error('Ошибка:', error);
+        setMessage('Произошла ошибка при отправке. Попробуйте позже.');
+      });
+  };
+
   return (
-    <form className="popup-form" onSubmit={handleSubmit}>
+    <div className="contact-form">
       <input
+        className="custom-input"
         type="text"
+        name="name"
         placeholder="Ваше имя"
         value={name}
-        onChange={(e) => setName(e.target.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s]/g, ''))}
-        required
+        onChange={handleNameChange}
       />
+
       <input
+        className="custom-input"
         type="text"
+        name="phone"
         placeholder="Телефон"
         value={phone}
-        onChange={(e) => setPhone(formatPhone(e.target.value))}
-        maxLength="18"
-        required
+        onChange={handlePhoneChange}
       />
-      {error && <div className="form-error">{error}</div>}
-      <small>
-        Нажимая кнопку “Отправить” вы даёте своё согласие с{' '}
-        <a href="#">правилами обработки персональных данных</a>.
-      </small>
-      <button type="submit" className="submit-button">
-        Отправить
-      </button>
-    </form>
+
+      <p className="policy-text">
+        Нажимая кнопку “Отправить” вы даёте своё согласие с 
+        <a href="#"> правилами обработки персональных данных</a>
+      </p>
+
+      <div className="button-group">
+        <button type="button" className="btn next" onClick={handleSubmit}>
+          Отправить
+        </button>
+      </div>
+
+      {message && <p className="status-message">{message}</p>}
+
+      
+    </div>
   );
 };
 
 export default ContactForm;
+
+

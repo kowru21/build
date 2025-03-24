@@ -1,0 +1,24 @@
+.custom-input {
+    padding: 17px 20px 18px;
+    font-size: 20px;
+    line-height: 135%;
+    border-radius: 10px;
+    margin: 0px 20px 5px 0px;
+    border-color: #ffffff;
+    background-color: #ffffff;
+}
+
+
+.btn.next {
+	border: 1.5px solid white ; 
+	font-size: 20px;
+}
+
+.policy-text{
+	font-size: 12px;
+}
+.policy-text a
+{
+text-decoration: underline;
+color: white;   
+ }

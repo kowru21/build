@@ -105,7 +105,7 @@ const [isPopupOpen, setIsPopupOpen] = useState(false);
           <Popup isOpen={isPopupOpen} onClose={handleClosePopup} />
         </div>
         <div className="hero-image">
-          <img src="/path/to/image.jpg" alt="ФОТО" />
+          <img src="heroimage.png" alt="ФОТО" />
           <div className="hero-image-caption">
             <h2>Jusstrictum</h2>
             <p>Юридическая компания</p>

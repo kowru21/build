@@ -201,13 +201,13 @@
 .mobile-menu {
   position: fixed;
   top: 0;
-  left: 25%;
-  width: 65%;
+  left: 2%;
+  width: 85%;
   height: 100vh;
   background-color: white;
   z-index: 1000;
-  padding: 20px;
   overflow-ys: auto;
+  padding: 20px;
 }
 
 .upper-info{
@@ -302,7 +302,7 @@
     font-size: 50px;
     cursor: pointer;
     text-align: right;
-    margin-left: 50px;
+    margin-left: 150px;
     color: #2e80e1;
   }
    .mobile-menu-toggle {

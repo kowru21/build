@@ -5,8 +5,11 @@ import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import ConsultationBlock from "./components/ConsultationBlock";
 import Popup from "./components/Popup"; // Импортируем Popup
-import BankruptcyCalculator from "./components/BankruptcyCalculator";
-
+import BankruptcyCalculator   from "./components/BankruptcyCalculator";
+import InfoBlock   from "./components/InfoBlock";
+import ProcessBlock   from "./components/ProcessBlock";
+import ResultsBlock   from "./components/ResultsBlock";
+import FAQBlock   from "./components/FAQBlock";
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Состояние для управления попапом
 
@@ -28,11 +31,16 @@ function App() {
   return (
     <Router>
       <div className="App">
+      <meta name="theme-color" content="#4285f4" />
         <Header />
         <HeroSection />
         <AboutSection />
         <ConsultationBlock />
         <BankruptcyCalculator />
+        <InfoBlock/>
+        <ProcessBlock/>
+        <ResultsBlock/>
+        <FAQBlock/>
         {/* Рендерим Popup, если isPopupOpen === true */}
         <Popup isOpen={isPopupOpen} onClose={handleClosePopup} />
       </div>

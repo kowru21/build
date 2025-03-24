@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './BankruptcyCalculator.css';
-import ContactForm from "./ContactForm";
+import ContactForm from './ContactForm';
 
 const steps = [
   {
@@ -52,38 +52,21 @@ const BankruptcyCalculator = () => {
     setAnswers({ ...answers, [currentStep]: option });
   };
 
-  const handleInputChange = (field, value) => {
-    setAnswers({
-      ...answers,
-      [currentStep]: { ...answers[currentStep], [field]: value },
-    });
-  };
-
   const renderStepContent = () => {
     const step = steps[currentStep];
 
     if (step.type === 'checkbox') {
-      return (
-        <div className="checkbox-group">
-          {step.options.map((option) => (
-            <label key={option} className="checkbox-item">
-              <input
-                type="checkbox"
-                checked={answers[currentStep]?.includes(option) || false}
-                onChange={() => handleCheckboxChange(option)}
-              />
-              {option}
-            </label>
-          ))}
-          {step.options.includes('другие') || step.options.includes('Другое') ? (
-            <input
-              className="custom-input"
-              type="text"
-              placeholder="Свой ответ"
-            />
-          ) : null}
-        </div>
-      );
+      return step.options.map((option) => (
+        <label key={option} className="checkbox-item">
+          <input
+            type="checkbox"
+            className="checkbox"
+            checked={answers[currentStep]?.includes(option) || false}
+            onChange={() => handleCheckboxChange(option)}
+          />
+          {option}
+        </label>
+      ));
     }
 
     if (step.type === 'radio') {
@@ -101,11 +84,12 @@ const BankruptcyCalculator = () => {
     }
 
     if (step.type === 'form') {
-      return (
-        <>
-          <ContactForm />
-        </>
-      );
+      const extradata = steps.slice(0, -1).map((s, idx) => ({
+        question: s.question,
+        answer: answers[idx],
+      }));
+
+      return <ContactForm answers={answers[5]} extradata={extradata} />;
     }
 
     return null;
@@ -116,27 +100,34 @@ const BankruptcyCalculator = () => {
       <div className="calculator-content">
         <div className="calculator-sidebar">
           <h2>Индивидуальный расчет стоимости банкротства</h2>
-          <p>
-            В случае если ваша ситуация отличается от перечисленных пройдите тест, чтобы узнать стоимость
-          </p>
+          <p>В случае если ваша ситуация отличается от перечисленных пройдите тест, чтобы узнать стоимость</p>
         </div>
 
         <div className="calculator-main">
-          <span className="step">Шаг {currentStep + 1}:</span>
+          <span className="step-count">Шаг {currentStep + 1} из {steps.length}</span>
           <h3>{steps[currentStep].question}</h3>
-          {renderStepContent()}
+
+          <div className="step-content">
+            {renderStepContent()}
+          </div>
 
           <div className="button-group">
             <button
               className="btn back"
               disabled={currentStep === 0}
               onClick={() => setCurrentStep(currentStep - 1)}
-            >Назад</button>
-            <button
-              className="btn next"
-              disabled={currentStep === steps.length - 1}
-              onClick={() => setCurrentStep(currentStep + 1)}
-            >Вперед</button>
+            >
+              Назад
+            </button>
+
+            {currentStep < steps.length - 1 && (
+              <button
+                className="btn next"
+                onClick={() => setCurrentStep(currentStep + 1)}
+              >
+                Вперед
+              </button>
+            )}
           </div>
         </div>
       </div>

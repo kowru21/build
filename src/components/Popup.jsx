@@ -59,7 +59,7 @@ const Popup = ({ isOpen, onClose }) => {
     }
 
     try {
-      const response = await fetch("https://jusstrictum.ru/send-message/", {
+      const response = await fetch('http://localhost:8000/send-message/', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

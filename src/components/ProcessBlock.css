@@ -1,0 +1,134 @@
+.process-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.process-title {
+  font-weight: 800;
+  font-size: 55px;
+  color: #1f2937;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.process-container {
+  display: grid;
+  grid-template-columns: 167px 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.process-icon img {
+  width: 167px;
+  height: 167px;
+  display: block;
+}
+
+.process-summary {
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 12px;
+  color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 250px; /* Теперь у голубого и синего блока одинаковая высота */
+}
+
+.light-blue,
+.dark-blue {
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 250px;
+}
+
+.light-blue,
+.dark-blue p {
+  padding: 0px 30px 0px 30px; 
+}
+
+.light-blue {
+  background-color: #e0f2fe;
+}
+
+.dark-blue {
+  background-color: #2563eb;
+  color: white;
+}
+
+.process-button {
+  display: block;
+  margin-top: 12px;
+  background: white;
+  color: #2563eb;
+  padding: 15px 100px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 30px 0px 30px; 
+}
+
+.process-steps,
+.process-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.process-step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Теперь заголовки и текст на одном уровне */
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.process-step-number {
+  font-size: 85px;
+  font-weight: bold;
+  color: #2563eb;
+  text-align: right;
+}
+
+.process-step-title {
+  font-size: 24px;
+  flex: 1;
+}
+
+.process-step-text {
+  font-size: 18px;
+  color: #374151;
+  margin: 0;
+  padding: 44px 0px 44px 0px;
+  flex: 1;
+  border-bottom: 1px solid #d1d5db;  
+}
+
+.process-summary h3 {
+  font-size: 45px;
+  color: #2e80e1; 
+  margin-top: 60px;
+}
+
+@media (max-width: 1024px) {
+  .process-container {
+    grid-template-columns: 1fr;
+  }
+  .process-icon {
+    display: none;
+  }
+  .dark-blue{
+    height: 350px;
+  }
+  .process-button {
+    padding: 15px 70px;
+}
+}
