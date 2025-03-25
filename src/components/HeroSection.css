@@ -39,7 +39,7 @@
   font-family: 'Manrope', sans-serif;
   display: flex;
   align-items: center;
-  color: #007bff;
+  color: #BA3D3B;
   font-size: 35px;
   font-weight: 500;
   gap: 10px; /* Расстояние между галочкой и текстом */
@@ -82,7 +82,7 @@
   display: block;
   font-size: 64px; /* Размер для 45, 12, 100% */
   font-weight: 600; /* Дополнительная жирность */
-  color: #007bff;
+  color: #BA3D3B;
 }
 
 .stat-item span {
@@ -93,7 +93,7 @@
 
 .hero-button {
   display: inline-block;
-  background-color: #007bff; /* Синий цвет */
+  background-color: #BA3D3B; /* Синий цвет */
   color: white; /* Белый цвет текста */
   font-size: 16px; /* Размер текста */
   font-weight: 500; /* Жирность текста */
@@ -108,7 +108,7 @@
 }
 
 .hero-button:hover {
-  background-color: #0056b3; /* Более темный синий при наведении */
+  background-color: #C35654; /* Более темный синий при наведении */
   transform: scale(1.02); /* Легкое увеличение кнопки */
 }
 
@@ -122,11 +122,13 @@
   flex: 1;
   max-width: 50%;
   text-align: center;
+  
 }
 
 .hero-image img {
   max-width: 100%;
   border-radius: 10px;
+
 }
 
 .hero-image-caption {
@@ -134,6 +136,7 @@
 }
 
 .hero-image-caption h2 {
+  color: #BA3D3B;
   font-size: 20px;
   font-weight: bold;
 }
@@ -146,7 +149,7 @@
 .checkmark {
   width: 25px; /* Размер галочки */
   height: 25px;
-  stroke: #007bff; /* Цвет галочки */
+  stroke: #BA3D3B; /* Цвет галочки */
 }
 
 

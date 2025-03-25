@@ -18,7 +18,7 @@
 }
 
 .highlight {
-  color: #2e80e1;
+  color: #BA3D3B;
 }
 
 .consultation-features {
@@ -37,7 +37,7 @@
 }
 
 .feature h3 {
-  color: #2e80e1 ;
+  color: #BA3D3B;
   fon-weight: 400; 
 }
 
@@ -45,7 +45,7 @@
   width: 100px;
   height: 100px;
   font-size: 24px;
-  background-color: #e3efff;
+  background-color: #EECFCE;
   color: #2e80e1;
   display: flex;
   align-items: center;
@@ -89,7 +89,7 @@
 
 .consultation-contact-form {
   text-align: left; 
-  background-color: #3b82f6; 
+  background-color: #BA3D3B; 
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   margin-left: 50px; 

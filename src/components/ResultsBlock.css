@@ -1,93 +1,58 @@
+     
 .results-wrapper {
   max-width: 1400px;
   margin: 0 auto;
   padding: 40px 20px;
   font-family: 'Arial', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .results-title {
-  font-size: 85px;
-  font-weight: 400;
+  font-size: 48px;
+  font-weight: 700;
   margin-bottom: 30px;
-  text-align: center;
-}
-
-.results-stats {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 40px;
-}
-
-.results-icon {
-  width: 160px;
-  height: 160px;
-  background-size: cover;
-  margin-right: 30px;
-}
-
-.results-info {
-  display: flex;
-  gap: 80px;
-}
-
-.results-info p {
-  font-size: 35px;
-  color: #333;
-}
-
-.results-info h3 {
-  font-size: 75px;
-  color: #2E80E1;
 }
 
 .slider-container {
   display: flex;
   align-items: center;
-  justify-content: center;
   position: relative;
-  width: 100%;
 }
 
 .slider {
   display: flex;
+  transition: transform 0.4s ease-in-out;
   gap: 30px;
   overflow: hidden;
+  width: 100%;
 }
 
 .slide {
-  min-width: 200px;
+  flex: 0 0 calc((100% - 150px) / 6);
   background: #fff;
-  padding: 16px;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
   text-align: center;
+  padding: 16px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
 }
 
 .slide img {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  margin-bottom: 12px;
-  border: 1px solid #e5e7eb; /* светло-серая обводка */
-  box-sizing: border-box;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #ccc;
 }
 
 .slide img:hover {
-  transform: scale(1.03); /* лёгкое увеличение */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* мягкая тень */
+  transform: scale(1.05);
 }
-
-
 
 .doc-number {
   font-weight: bold;
   font-size: 16px;
-  margin-bottom: 8px;
+  margin-top: 10px;
 }
 
 .doc-amount,
@@ -98,7 +63,7 @@
 
 .doc-amount span,
 .doc-duration span {
-  color: #2E80E1;
+  color: #BA3D3B;
   font-weight: bold;
 }
 
@@ -106,160 +71,83 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  z-index: 2;
 }
 
-.nav-button svg {
-  display: block;
+.nav-button.left {
+  margin-right: 10px;
 }
 
-body.modal-open {
-  overflow: hidden;
+.nav-button.right {
+  margin-left: 10px;
 }
 
+.slider-indicators {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background-color: #2E80E1;
+}
+
+/* Модалка */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
-  animation: fadeIn 0.3s ease-in-out;
 }
 
-.modal-content {
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
-  animation: slideIn 0.4s ease-in-out;
-}
-
-.modal-content img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 8px;
-}
-
-.modal-close,
-.modal-prev,
-.modal-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: white;
-  border: none;
-  border-radius: 50%;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
-  color: #2563eb;
+.modal-container img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
 }
 
 .modal-close {
-  top: 10px;
-  right: 10px;
-  transform: none;
+  position: absolute;
+  top: 16px;
+  right: 20px;
   font-size: 32px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-.modal-prev {
-  left: -60px;
-}
-
-.modal-next {
-  right: -60px;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-
-/* ======== МОБИЛЬНАЯ АДАПТАЦИЯ ======== */
+/* Адаптация */
 @media (max-width: 768px) {
-  /* Уменьшаем отступы и выравниваем заголовок */
-  .results-wrapper {
-    padding: 20px 16px;
+  .slide {
+    flex: 0 0 100%;
   }
 
-  .results-title {
-    font-size: 32px;
-    text-align: center;
-  }
-
-  /* Ставим блоки статистики в колонку */
-  .results-stats {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 32px;
-  }
-
-  .results-icon {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto;
-  }
-
-  .results-info {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .results-info p {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .results-info h3 {
-    font-size: 28px;
-    text-align: center;
-  }
-
-  /* Центруем и упрощаем слайдер */
-  .slider-container {
-    flex-direction: column;
-    align-items: center;
+  .nav-button {
+    display: none;
   }
 
   .slider {
-    flex-direction: column;
-    gap: 20px;
-    overflow: visible;
+    gap: 10px;
   }
 
-  .slide {
-    width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-  /* Перемещаем стрелки вниз и делаем их меньше */
-  .nav-button {
-    position: static;
-    margin: 12px;
-  }
-
-  .nav-button svg {
-    width: 45px;
-    height: 45px;
+  .slider-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
   }
 }
-

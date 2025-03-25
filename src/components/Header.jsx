@@ -27,7 +27,7 @@ const Header = () => {
         <ul className="header-list">
          <li className="logo-section">
             <img
-              src="https://karataevarb.ru/img/header-img.svg"
+              src="/logo.png"
               alt="Логотип"
               className="logo"
             />
@@ -45,8 +45,8 @@ const Header = () => {
             <div className="check-icon">
 
               <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="17.5" cy="17.5" r="17" stroke="#2E80E1"></circle>
-                <path d="M8.45801 16.9165L15.974 23.4005L27.8651 11.5095" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="17.5" cy="17.5" r="17" stroke="#C35654"></circle>
+                <path d="M8.45801 16.9165L15.974 23.4005L27.8651 11.5095" stroke="#BA3D3B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <div>
@@ -57,7 +57,7 @@ const Header = () => {
           <div className="fullcontactblock">
           <li className="contact-block">
             <div className="phone-container">
-              <p className="phone-number">+7 495 877 45 17</p>
+              <p className="phone-number">+7 999 999 99 99</p>
               <div className="messengers">
   <a href="https://t.me/yourtelegram" target="_blank" rel="noopener noreferrer">
     <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,7 +79,7 @@ const Header = () => {
           </li>
 
           <li className="consultation-button-wrapper">
-            <button onClick={handleOpenPopup} className="consultation-button">Консультация</button>
+            <button onClick={handleOpenPopup} className="consultation-button-header">Консультация</button>
             <Popup isOpen={isPopupOpen} onClose={handleClosePopup} />
           </li>
           </div>

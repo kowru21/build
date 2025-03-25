@@ -31,7 +31,7 @@
 
 
 .faq-item {
-  background-color: #f3f8fb;
+  background-color: #FBF3F3;
   border-radius: 16px;
   padding: 24px 32px;
   cursor: pointer;
@@ -55,7 +55,7 @@
 }
 
 .faq-question span {
-  color: #2563eb;
+  color: #BA3D3B;
   font-size: 28px;
   line-height: 1;
   margin-right: 12px;
@@ -96,7 +96,7 @@
   left: 0;
   width: 8px;
   height: 8px;
-  background-color: #2563eb;
+  background-color: #BA3D3B;
   border-radius: 50%;
 }
 

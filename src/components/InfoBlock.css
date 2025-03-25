@@ -16,7 +16,7 @@
 }
 
 .info-item {
-  background: #f3f8fb;
+  background: #F7E7E7;
   padding: 45px;
   border-radius: 12px;
   box-shadow: none;
@@ -41,7 +41,7 @@
 
 .info-link {
   font-size: 18px;   
-  color: #2563eb;
+  color: #BA3D3B;
   text-decoration: none;
   font-weight: 500;
   margin-bottom: 10px;
@@ -75,7 +75,7 @@
 
 .info-list-item::before {
   content: '\2022';
-  color: #2563eb;
+  color: #BA3D3B;
   font-weight: bold;
   display: inline-block;
   width: 12px;

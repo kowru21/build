@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./ContactForm.css"; 
 
-const ContactForm = ({ answers = {}, extradata = [], endpoint = 'http://localhost:8000/send-message/' }) => {
+const ContactForm = ({ answers = {}, extradata = [], endpoint = 'https://jusstrictum.ru//send-message/' }) => {
   const [name, setName] = useState(answers?.name || '');
   const [phone, setPhone] = useState(answers?.phone || '');
   const [message, setMessage] = useState('');

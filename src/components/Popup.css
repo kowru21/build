@@ -12,7 +12,7 @@
 }
 
 .popup-content {
-  background-color: #2e80e1; /* Синий фон */
+  background-color: #BA3D3B; /* Синий фон */
   border-radius: 15px; /* Закругленные углы */
   width: 425px;
   max-width: 90%; /* Адаптивность */
@@ -104,15 +104,17 @@ small a {
   margin: 0px 20px 5px 20px;
   font-size: 16px;
   font-weight: bold;
-  color: #2e80e1;
+  color: #BA3D3B;
   background-color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .submit-button:hover {
   background-color: #e6e6e6;
+  transform: scale(1.03);
 }
 
 .popup-close {

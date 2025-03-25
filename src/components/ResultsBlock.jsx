@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+
+import React, { useState, useEffect, useRef } from "react";
 import "./ResultsBlock.css";
+import ModalImage from "./ModalImage";
 
 const cases = [
   {
@@ -44,43 +46,52 @@ const cases = [
     duration: "7 месяцев 14 дней",
     image: "images/docs/doc6.png",
   },
+  {
+    id: 7,
+    number: "А41-18145/2023",
+    amount: "3 704 211,17 ₽",
+    duration: "7 месяцев 14 дней",
+    image: "images/docs/doc6.png",
+  },
 ];
 
 const ResultsBlock = () => {
-  const [startIndex, setStartIndex] = useState(0);
-  const [modalIndex, setModalIndex] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [modalImage, setModalImage] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const sliderRef = useRef(null);
+  const touchStartX = useRef(null);
 
-  const visibleCases = cases.slice(startIndex, startIndex + 4);
+  useEffect(() => {
+    const updateIsMobile = () => setIsMobile(window.innerWidth <= 768);
+    updateIsMobile();
+    window.addEventListener("resize", updateIsMobile);
+    return () => window.removeEventListener("resize", updateIsMobile);
+  }, []);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX.current - touchEndX;
+    if (diff > 50) nextSlide();
+    if (diff < -50) prevSlide();
+  };
+
+  const visibleCount = isMobile ? 1 : 6;
+  const visibleCases = cases.slice(currentIndex, currentIndex + visibleCount);
 
   const nextSlide = () => {
-    if (startIndex + 4 < cases.length) {
-      setStartIndex(startIndex + 1);
+    if (currentIndex + visibleCount < cases.length) {
+      setCurrentIndex(currentIndex + 1);
     }
   };
 
   const prevSlide = () => {
-    if (startIndex > 0) {
-      setStartIndex(startIndex - 1);
-    }
-  };
-
-  const openModal = (index) => {
-    setModalIndex(index);
-  };
-
-  const closeModal = () => {
-    setModalIndex(null);
-  };
-
-  const nextModal = () => {
-    if (modalIndex < cases.length - 1) {
-      setModalIndex(modalIndex + 1);
-    }
-  };
-
-  const prevModal = () => {
-    if (modalIndex > 0) {
-      setModalIndex(modalIndex - 1);
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
     }
   };
 
@@ -88,35 +99,25 @@ const ResultsBlock = () => {
     <div className="results-wrapper">
       <h2 className="results-title">Результаты процедуры банкротства</h2>
 
-      <div className="results-stats">
-        <div className="results-info">
-          <div>
-            <p>Успешно завершено дел</p>
-            <h3>&gt;300</h3>
-          </div>
-          <div>
-            <p>Списано долгов</p>
-            <h3>&gt;500 000 000 ₽</h3>
-          </div>
-        </div>
-      </div>
-
       <div className="slider-container">
-        <button className="nav-button left" onClick={prevSlide}>
-          {/* ← SVG left */}
-          <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="-0.263575" y="0.263575" width="54.4729" height="54.4729" rx="9.73643"
-              transform="matrix(-1 0 0 1 54.4729 -0.000488281)" fill="#2E80E1" />
-            <rect x="-0.263575" y="0.263575" width="54.4729" height="54.4729" rx="9.73643"
-              transform="matrix(-1 0 0 1 54.4729 -0.000488281)" stroke="#2E80E1" strokeWidth="0.527149" />
-            <path d="M17.5 27.4995L22.5 24.6182V30.3863L17.5 27.4995ZM37.5 27.9995H22V26.9995H37.5V27.9995Z" fill="white" />
-          </svg>
-        </button>
+        {!isMobile && (
+          <button className="nav-button left" onClick={prevSlide}>
+            <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="-0.26" y="0.26" width="54.47" height="54.47" rx="9.73" transform="matrix(-1 0 0 1 54.47 -0.00048)" fill="#BA3D3B" />
+              <path d="M17.5 27.5L22.5 24.6V30.4L17.5 27.5ZM37.5 28H22V27H37.5V28Z" fill="white" />
+            </svg>
+          </button>
+        )}
 
-        <div className="slider">
-          {visibleCases.map((item, index) => (
-            <div className="slide" key={item.id} onClick={() => openModal(startIndex + index)}>
-              <img src={item.image} alt={item.number} />
+        <div
+          className="slider"
+          ref={sliderRef}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          {visibleCases.map((item) => (
+            <div className="slide" key={item.id}>
+              <img src={item.image} alt={item.number} onClick={() => setModalImage(item.image)} />
               <p className="doc-number">{item.number}</p>
               <p className="doc-amount">Списали <br /><span>{item.amount}</span></p>
               <p className="doc-duration">За срок <br /><span>{item.duration}</span></p>
@@ -124,28 +125,28 @@ const ResultsBlock = () => {
           ))}
         </div>
 
-        <button className="nav-button right" onClick={nextSlide}>
-          {/* → SVG right */}
-          <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="0.263575" y="0.263575" width="54.4729" height="54.4729" rx="9.73643" fill="#2E80E1" />
-            <rect x="0.263575" y="0.263575" width="54.4729" height="54.4729" rx="9.73643"
-              stroke="#2E80E1" strokeWidth="0.527149" />
-            <path d="M37.5 27.4995L32.5 24.6182V30.3863L37.5 27.4995ZM17.5 27.9995H33V26.9995H17.5V27.9995Z" fill="white" />
-          </svg>
-        </button>
+        {!isMobile && (
+          <button className="nav-button right" onClick={nextSlide}>
+            <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.26" y="0.26" width="54.47" height="54.47" rx="9.73" fill="#BA3D3B" />
+              <path d="M37.5 27.5L32.5 24.6V30.4L37.5 27.5ZM17.5 28H33V27H17.5V28Z" fill="white" />
+            </svg>
+          </button>
+        )}
       </div>
 
-      {/* Модалка */}
-      {modalIndex !== null && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>×</button>
-            <button className="modal-prev" onClick={prevModal} disabled={modalIndex === 0}>‹</button>
-            <img src={cases[modalIndex].image} alt="Просмотр документа" />
-            <button className="modal-next" onClick={nextModal} disabled={modalIndex === cases.length - 1}>›</button>
-          </div>
+      {isMobile && (
+        <div className="slider-indicators">
+          {cases.map((_, i) => (
+            <span
+              key={i}
+              className={`dot ${i === currentIndex ? "active" : ""}`}
+            />
+          ))}
         </div>
       )}
+
+      <ModalImage src={modalImage} onClose={() => setModalImage(null)} />
     </div>
   );
 };

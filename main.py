@@ -6,7 +6,7 @@ import uvicorn
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",
+    "83.220.174.203",
     "http://localhost:5173",
 ]
 
@@ -19,7 +19,7 @@ app.add_middleware(
 )
 
 TELEGRAM_BOT_TOKEN = "7412655240:AAFge9LhGzjtBB0w3dk5TjAEz-E9UQ5TjYc"
-TELEGRAM_CHAT_ID = "123948691"
+TELEGRAM_CHAT_ID = "-1002473517556"
 
 @app.post("/send-message/")
 async def send_message(request: Request):

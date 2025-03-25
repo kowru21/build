@@ -10,6 +10,8 @@ import InfoBlock   from "./components/InfoBlock";
 import ProcessBlock   from "./components/ProcessBlock";
 import ResultsBlock   from "./components/ResultsBlock";
 import FAQBlock   from "./components/FAQBlock";
+import Footer  from "./components/Footer";
+
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Состояние для управления попапом
 
@@ -31,7 +33,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <meta name="theme-color" content="#4285f4" />
         <Header />
         <HeroSection />
         <AboutSection />
@@ -41,6 +42,7 @@ function App() {
         <ProcessBlock/>
         <ResultsBlock/>
         <FAQBlock/>
+        <Footer/>
         {/* Рендерим Popup, если isPopupOpen === true */}
         <Popup isOpen={isPopupOpen} onClose={handleClosePopup} />
       </div>

@@ -14,7 +14,7 @@ const ProcessBlock = () => {
       <div className="process-container">
         {/* Левая колонка (Иконка) */}
         <div className="process-icon">
-          <img src="images/left.jpg" alt="Иконка" />
+          <img src="/lightlogo.svg" alt="Иконка" />
         </div>
 
         {/* Центральная колонка (Номера + Заголовки) */}
