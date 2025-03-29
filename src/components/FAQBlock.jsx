@@ -43,7 +43,7 @@ const FAQBlock = () => {
   };
 
   return (
-    <div className="faq-wrapper">
+    <div className="faq-wrapper" id="faq">
       <h2 className="faq-title">Частые вопросы <br/>о банкротстве</h2>
       <div className="faq-items">
         {faqData.map((item, index) => (

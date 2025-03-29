@@ -6,7 +6,7 @@ const ConsultationBlock = () => {
   
 
   return (
-    <section className="consultation-container">
+    <section className="consultation-container" id="consultation-container">
       <div className="consultation-text">
         <h2>
           Что вам даст <br />

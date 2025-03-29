@@ -88,12 +88,12 @@ const Header = () => {
 
       <nav className="nav-menu">
         <ul className="nav-list">
-          <li><a href="#arb-upravlenie"><span>01</span> Арб. управляющий</a></li>
-          <li><a href="#cost"><span>02</span> Стоимость</a></li>
-          <li><a href="#steps"><span>03</span> Этапы банкротства</a></li>
+          <li><a href="#hero"><span>01</span> Главная</a></li>
+          <li><a href="#about"><span>02</span> О нас</a></li>
+          <li><a href="#consultation-container"><span>03</span> Этапы процедуры</a></li>
           <li><a href="#results"><span>04</span> Результаты</a></li>
           <li><a href="#faq"><span>05</span> Частые вопросы</a></li>
-          <li><a href="#contacts"><span>06</span> Контакты</a></li>
+          <li><a href="#footer"><span>06</span> Контакты</a></li>
         </ul>
       </nav>
 
@@ -107,8 +107,8 @@ const Header = () => {
       <div className="check-icon mobile">
 
               <svg width="28" height="28" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="17.5" cy="17.5" r="17" stroke="#2E80E1"></circle>
-                <path d="M8.45801 16.9165L15.974 23.4005L27.8651 11.5095" stroke="#007bff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="17.5" cy="17.5" r="17" stroke="#C35654"></circle>
+                <path d="M8.45801 16.9165L15.974 23.4005L27.8651 11.5095" stroke="#C35654" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
             <div>
@@ -121,12 +121,12 @@ const Header = () => {
             </div>
           <div className="mobile-menu-content">
             <ul className="mobile-nav-list">
-              <li><a href="#arb-upravlenie"><span> 01 </span>Арб. управляющий</a></li>
-              <li><a href="#cost"><span> 02 </span> Стоимость</a></li>
-              <li><a href="#steps"><span> 03 </span> Этапы банкротства</a></li>
-              <li><a href="#results"><span> 04 </span> Результаты</a></li>
-              <li><a href="#faq"><span> 05 </span>Частые вопросы</a></li>
-              <li><a href="#contacts"><span> 06 </span> Контакты</a></li>
+              <li><a href="#hero"><span>01</span> Главная</a></li>
+          <li><a href="#about"><span>02</span> О нас</a></li>
+          <li><a href="#consultation-container"><span>03</span> Этапы процедуры</a></li>
+          <li><a href="#results"><span>04</span> Результаты</a></li>
+          <li><a href="#faq"><span>05</span> Частые вопросы</a></li>
+          <li><a href="#footer"><span>06</span> Контакты</a></li>
             </ul>
             <div className="mobile-contact">
               <p>+7 495 877 45 17</p>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"; // Добавляем useState и useEffect
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
@@ -11,6 +11,7 @@ import ProcessBlock   from "./components/ProcessBlock";
 import ResultsBlock   from "./components/ResultsBlock";
 import FAQBlock   from "./components/FAQBlock";
 import Footer  from "./components/Footer";
+import Applications from "./components/Applications";
 
 function App() {
   const [isPopupOpen, setIsPopupOpen] = useState(false); // Состояние для управления попапом
@@ -32,6 +33,10 @@ function App() {
 
   return (
     <Router>
+ <Routes>
+    <Route path="/applications" element={<Applications />} />
+    <Route path="/*" element={
+      <>
       <div className="App">
         <Header />
         <HeroSection />
@@ -46,6 +51,9 @@ function App() {
         {/* Рендерим Popup, если isPopupOpen === true */}
         <Popup isOpen={isPopupOpen} onClose={handleClosePopup} />
       </div>
+ </>
+    } />
+  </Routes>
     </Router>
   );
 }

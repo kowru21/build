@@ -1,13 +1,24 @@
-FROM node:alpine as build
+FROM node:18-alpine
 
-COPY package.json package.json
+# Устанавливаем рабочую директорию
+WORKDIR /app
+
+# Копируем package.json и package-lock.json
+COPY package*.json ./
+
+# Устанавливаем зависимости
 RUN npm install
+
+# Копируем все файлы проекта
 COPY . .
+
+# Сборка приложения
 RUN npm run build
 
-FROM nginx:stable-alpine
+# Используем Nginx для раздачи статического контента
+FROM nginx:1.23.3-alpine
+COPY --from=0 /app/build /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-COPY --from=build /dist /usr/share/nginx/html
-COPY --from=build nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 3001
-CMD [ "nginx", "-g", "daemon off;" ]
+CMD ["nginx", "-g", "daemon off;"]

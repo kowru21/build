@@ -6,8 +6,9 @@ import uvicorn
 app = FastAPI()
 
 origins = [
-    "83.220.174.203",
+
     "http://localhost:5173",
+    "83.220.174.203",
 ]
 
 app.add_middleware(
@@ -53,3 +54,5 @@ async def send_message(request: Request):
 
     except Exception as e:
         return {"success": False, "message": str(e)}
+
+

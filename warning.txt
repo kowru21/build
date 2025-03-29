@@ -1,0 +1,4 @@
+https://jusstrictum.ru/api/send-message/ -- на фронт
+
+"http://localhost:5173", -- под корсы
+    "83.220.174.203", -- под корсы

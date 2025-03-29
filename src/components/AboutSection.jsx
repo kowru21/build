@@ -3,7 +3,7 @@ import "./AboutSection.css";
 
 const AboutSection = () => {
   return (
-    <section className="about-section">
+    <section className="about-section" id="about">
       <div className="about-container">
         {/* Левый блок */}
         <div className="about-left-block"></div>
@@ -37,9 +37,9 @@ const AboutSection = () => {
                 <p>Здесь вы можете найти сведения о нашей деятельности и опыте</p>
                 </div>
                 <div className="profile-logo">
-                       <svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                       <svg width="80" height="80" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
   
-  <circle cx="40" cy="40" r="40" fill="#FFFFFF"/>
+  <circle cx="30" cy="30" r="30" fill="#FFFFFF"/>
 
  
   <g stroke="#BA3D3B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">

@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 * {
   margin: 0px; 
   padding: 0px;
@@ -198,7 +203,7 @@
   cursor: pointer;
   text-align: right;
   margin-left: 100px;
-  color: #007bff;
+  color: #C35654;
 }
 
 .mobile-menu {
@@ -229,7 +234,7 @@
   border: none;
   cursor: pointer;
   display: inline-block;
-  color: #007bff;
+  color: #BA3D3B;
 }
 .info-main.mobile{
   font-size: 13px;
@@ -259,7 +264,7 @@
 }
 .mobile-nav-list li a span{
   text-decoration: none;
-  color: #2e80e1;
+  color: #BA3D3B;
   font-size: 18px;
 }
 
@@ -282,7 +287,7 @@
 
 .mobile-consultation-button {
   font-size: 20px;
-  background-color: #2e80e1;
+  background-color: #BA3D3B;
   color: white;
   width: 100%;
   padding: 10px 20px;
@@ -292,7 +297,7 @@
 }
 
 .mobile-consultation-button:hover {
-  background-color: #0056b3;
+  background-color: #C35654;
 }
 
 /* Медиазапрос для мобильных устройств */
@@ -306,7 +311,7 @@
     cursor: pointer;
     text-align: right;
     margin-left: 150px;
-    color: #2e80e1;
+    color: #BA3D3B;
   }
    .mobile-menu-toggle {
     display: block;
@@ -336,7 +341,7 @@
 
 
   .hamburger-menu:hover {
-    color: #0056b3;
+    color: #C35654;
   }
 
   .nav-list.mobile {

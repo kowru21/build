@@ -15,7 +15,7 @@ const [isPopupOpen, setIsPopupOpen] = useState(false);
   };
 
   return (
-    <section className="hero-section">
+    <section className="hero-section" id="hero">
       <div className="hero-container">
         <div className="hero-text">
           <h1>Поможем освободиться от долгов</h1>
@@ -125,7 +125,7 @@ const [isPopupOpen, setIsPopupOpen] = useState(false);
           <Popup isOpen={isPopupOpen} onClose={handleClosePopup} />
         </div>
         <div className="hero-image">
-          <img src="images/heroimage.png" alt="ФОТО" />
+          <img src="images/heroimage.webp" alt="ФОТО" />
           <div className="hero-image-caption">
             <h2>Jusstrictum</h2>
             <p>Юридическая компания</p>

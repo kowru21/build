@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "number": "А40-164597/2022",
+    "amount": "5 641 056,45 ₽",
+    "duration": "10 месяцев 20 дней",
+    "image": "images/docs/doc1.png"
+  },
+  {
+    "id": 2,
+    "number": "А40-263944/2022",
+    "amount": "2 187 127,92 ₽",
+    "duration": "9 месяцев 26 дней",
+    "image": "images/docs/doc2.png"
+  },
+  {
+    "id": 3,
+    "number": "А40-205676/2022",
+    "amount": "2 655 504,42 ₽",
+    "duration": "8 месяцев и 2 дня",
+    "image": "images/docs/doc3.png"
+  },
+  {
+    "id": 4,
+    "number": "А41-9578/2023",
+    "amount": "1 389 145,63 ₽",
+    "duration": "7 месяцев 25 дней",
+    "image": "images/docs/doc4.png"
+  },
+  {
+    "id": 5,
+    "number": "А40-104365/2023",
+    "amount": "4 610 668,76 ₽",
+    "duration": "7 месяцев 25 дней",
+    "image": "images/docs/doc5.png"
+  },
+  {
+    "id": 6,
+    "number": "А41-18145/2023",
+    "amount": "3 704 211,17 ₽",
+    "duration": "7 месяцев 14 дней",
+    "image": "images/docs/doc6.png"
+  },
+  {
+    "id": 7,
+    "number": "А41-9999/2023",
+    "amount": "1 000 000,00 ₽",
+    "duration": "6 месяцев",
+    "image": "images/docs/doc6.png"
+  }
+]
